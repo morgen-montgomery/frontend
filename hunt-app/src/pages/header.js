@@ -8,13 +8,12 @@ export default class Header extends React.Component {
     return (
 
       <Navbar brand="Scavng'r" left className="black">
-
-          <NavItem href='/profile'> Profile </NavItem>
-          <NavItem href='/createhunt'> Create Hunt </NavItem>
-          <NavItem href='/userhunt'> User Hunt </NavItem>
-          <NavItem href='/'> Logout </NavItem>
-          <NavItem href='/'> Home </NavItem>
-          <NavItem href='/login'> Login | Sign Up </NavItem>
+        <NavItem href='/'> Home </NavItem>
+        <NavItem href='/login'> Login | Sign Up </NavItem>
+        <NavItem href='/profile'> Profile </NavItem>
+        <NavItem href='/createhunt'> Create Hunt </NavItem>
+        <NavItem href='/userhunt'> User Hunt </NavItem>
+        <NavItem href='/'> Logout </NavItem>
       </Navbar>
     );
   }
