@@ -14,7 +14,6 @@ export default class LoginPage extends React.Component {
           <Col m={6} s={12} class="auth-form">
             <Card>
               <h3> Login </h3>
-              <hr />
               <form id="signin-form">
                 <Input m={12} label="First Name" />
                 <Input m={12} type="email" label="Email" />
@@ -40,7 +39,7 @@ export default class LoginPage extends React.Component {
             </Card>
           </Col>
         </Row>
-      </Row>  
+      </Row>
     );
   }
 }
