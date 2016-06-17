@@ -12,12 +12,14 @@ export default class InviteUsers extends React.Component {
       url: '/api/invites',
       data: $('#inviteUser').serialize()
     });
+    var name = $('#inviteUser').find('input[name="name"]').val()
+    $('#userList').append("<div className={'invited'}>" + name + "</div>");
+
     $('#name').val('');
     $('#email').val('');
   };
 
   render () {
-    console.log('rendering');
     return (
       <Row>
         <div>
@@ -27,11 +29,11 @@ export default class InviteUsers extends React.Component {
           <Col m={6} s={12} class="auth-form">
             <Card>
               <h3> Send Invite </h3>
-              <h6 className={"invite-subhead"}> for "hunt name goes here" </h6>
+              <h6 className={"invite-subhead"}>{this.props.asshat}</h6>
               <hr />
               <form id="inviteUser">
-                <Input m={12} label="Name" id="name" type="text"/>
-                <Input m={12} label="Email" id="email" type="text" />
+                <Input m={12} label="Name" name="name" id="name" type="text"/>
+                <Input m={12} label="Email" name="email" id="email" type="text" />
 
                 <Col m={12}>
                   <label> RSVP By:
@@ -40,8 +42,8 @@ export default class InviteUsers extends React.Component {
                 </Col>
                 <div>
                   <button className={"btn invite-button"} onClick={this.inviteUser}> Invite User </button>
-                  <span className={"push-down"}> or </span>
-                    <button onClick={this.props.bar} className={"btn invite-button"}> Return to Hunt Page </button>
+                  <span> </span>
+                    <button onClick={this.props.bar} className={"btn invite-button"}> Proceed to Hunt Page </button>
                 </div>
               </form>
             </Card>
@@ -50,7 +52,8 @@ export default class InviteUsers extends React.Component {
           <Col m={6} s={12} class="auth-form">
             <Card>
               <h3> Invited Users </h3>
-              <hr />
+              <div id="userList"> </div>
+              <hr/>
 
             </Card>
           </Col>

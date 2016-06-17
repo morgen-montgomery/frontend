@@ -11,7 +11,7 @@ import { If, Then, Else } from 'react-if';
 export default class CreateHunt extends React.Component {
 
   state = {
-    huntName: '',
+    huntName: 'sample',
     page: "CreateHunt"
   };
 
@@ -34,10 +34,11 @@ export default class CreateHunt extends React.Component {
     this.setState({page: 'InviteUsers'});
   };
 
-  onToReview (e) {
+    onToReview (e) {
     e.preventDefault();
     this.setState({page: 'ReviewHunt'});
   };
+
 
   render () {
     return (
@@ -52,24 +53,24 @@ export default class CreateHunt extends React.Component {
           <h3> General Information </h3>
           <form id="huntForm" onSubmit={this.onSubmit.bind(this)} method="post">
             <Col m={6} s={12}>
-              <label> Hunt Name
-                <input type="text" name="hunt_name" />
+              <label id="hunt-label"> Hunt Name
+                <input class="hunt-input" type="text" name="hunt_name" />
               </label>
-              <label> Start Time
+              <label id="hunt-label"> Start Time
                 <input type="time" name="start_time"/>
               </label>
-              <label> Location
-                <input type="text" name="location"/>
+              <label id="hunt-label"> End Time
+                <input type="time" name="end_time"/>
               </label>
             </Col>
             <Col m={6} s={12}>
-              <label> Hunt Date
-                <input type="date" name="date"/>
+              <label id="hunt-label"> Hunt Date
+                <input class="hunt-input" type="date" name="date"/>
               </label>
-              <label> End Time
-                <input type="time" name="end_time"/>
+              <label id="hunt-label"> Location
+                <input type="text" name="location"/>
               </label>
-              <label> Description
+              <label id="hunt-label"> Description
                 <input type="text" name="description"/>
               </label>
             </Col>
@@ -86,7 +87,7 @@ export default class CreateHunt extends React.Component {
     </If>
     <If condition={ this.state.page === 'InviteUsers' }>
       <Then>
-        <InviteUsers bar={ this.onToReview.bind(this) }/>
+        <InviteUsers bar={ this.onToReview.bind(this) } asshat={ this.asshat }/>
       </Then>
     </If>
     <If condition={ this.state.page === 'ReviewHunt' }>
