@@ -36,6 +36,10 @@
   height: 2900px;
 }
 
+.center-btn {
+  text-align: center
+}
+
 @media only screen and (max-width : 992px) {
   .parallax-container .section {
     position: absolute;
